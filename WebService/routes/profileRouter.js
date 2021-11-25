@@ -8,7 +8,8 @@ router.use(bodyParser.json());
 var auth = require("../controlles/profileController");
 
 router.post("/register", auth.addProfile);
-// router.get('/authorize/:session', auth.authorize)
+router.get("/profile/:id", auth.getUser);
+router.put("/edit", auth.editUser);
 router.post("/login", auth.login);
 
 module.exports = router;
